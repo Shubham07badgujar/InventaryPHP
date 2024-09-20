@@ -1,85 +1,86 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url('path/to/your/drone-image.jpg'); /* Replace with your drone image path */
-    background-size: cover; /* Cover the entire background */
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f4f4f4;
     margin: 0;
-    opacity: 0.9; /* Slight transparency for the body */
+    padding: 20px;
 }
 
 .form-container {
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-    padding: 30px; /* Increased padding for better spacing */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow for a floating effect */
-    width: 400px; /* Increased width for better spacing */
-    transition: transform 0.3s; /* Smooth scale effect */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    transition: transform 0.3s ease; /* Transition for animation */
 }
 
-.form-container:hover {
-    transform: scale(1.02); /* Slightly enlarge on hover */
-}
-
-h2, h3 {
+h2 {
     text-align: center;
-    color: #333; /* Darker text color for better contrast */
-    margin-bottom: 20px; /* Space below headings */
+    color: #333;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    color: #555; /* Lighter color for labels */
+    margin: 10px 0 5px;
+    color: #555;
 }
 
-input, textarea, select {
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="file"] {
     width: 100%;
-    padding: 12px; /* Increased padding for inputs */
-    margin-bottom: 15px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    transition: border-color 0.3s, box-shadow 0.3s; /* Added shadow transition */
+    box-sizing: border-box;
+    transition: border-color 0.3s, background-color 0.3s; /* Transition for input color */
 }
 
-input:focus, textarea:focus, select:focus {
-    border-color: red; /* Change border color to red on focus */
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Add red shadow on focus */
-    outline: none; /* Remove default outline */
+/* Styles for focus state */
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+    background-color: #e8f4fd; /* Light background color on focus */
+}
+
+/* Change input color to dark red when typing */
+input:focus:valid {
+    border-color: darkred; /* Change border color to dark red when valid */
+    background-color: #ffe6e6; /* Light red background when valid */
+}
+
+/* Change input color to red when valid */
+input:valid {
+    border-color: red; /* Change border color to red when valid */
+    background-color: #ffe6e6; /* Light red background when valid */
 }
 
 button {
-    width: 100%;
-    padding: 12px; /* Increased padding for buttons */
-    background-color: #28a745;
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 4px;
+    padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; /* Smooth background and transform */
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s; /* Transition for size change */
+    margin-top: 15px; /* Add margin for spacing */
 }
 
 button:hover {
-    background-color: #218838;
-    transform: translateY(-2px); /* Lift effect on hover */
-}
-
-button:active {
-    transform: translateY(0); /* Reset lift effect when clicked */
-}
-
-/* Error state styling */
-input.error, textarea.error, select.error {
-    border-color: red; /* Change border color to red for errors */
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Add red shadow for errors */
+    background-color: #0056b3;
+    transform: scale(1.05); /* Increase size slightly on hover */
 }
 
 #formMessage {
+    margin-top: 20px;
     text-align: center;
-    margin-top: 10px;
-    color: #d9534f; /* Red color for error messages */
-    font-weight: bold; /* Make error messages bold */
+    color: #007BFF;
 }
